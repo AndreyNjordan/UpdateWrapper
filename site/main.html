@@ -1,32 +1,41 @@
-{{ define "main.html" }}
 <!DOCTYPE html>
 <html lang="en">
-    <script type="text/javascript" language="JavaScript" src="/site/js/script.js"></script>
-    <head>
-        <link rel="stylesheet" href="/site/bootstrap-5.1.3/css/bootstrap.min.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>UpdateWrapper</title>
-    </head>
-    <body>
-        <h1 name="test">Hello Njordan!</h1>
-        <div class="container">
-            <input type="button" value="Go Test!" onclick="TestFunc().then(text => console.log(text)).catch(err => console.log(err))">
-        </div>
-        <div class="container">
-            <input type="button" value="Get Update Content!" onclick="GetPluginUpdateContent()">
-        </div>
-
-        <div class="container">
-            <div class="media position-relative">
-                <div class="media-body">
-                    <a href="#" class="stretched-link">Media with stretched link</a>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                </div>
-              </div>
-        </div>
-
-    </body>
+<head>
+    <script src="/site/js/script.js"></script>
+    <link rel="stylesheet" href="/site/bootstrap-5.1.3/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NjordanUpdateWrapper</title>
+</head>
+<nav class="navbar sticky-top navbar-light bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#default-view" onclick="DefaultView()">
+        <img src="/site/images/favicon.ico" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        NjordanUpdateWrapper
+      </a>
+    </div>
+</nav>
+<body>
+    <div class="container">
+        <table class="table table-hover table-light">
+            <tbody id="MainTable">
+                <tr style="transform: rotate(0);">
+                <td><a class="stretched-link"">Mark</a></td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                </tr>
+                <tr style="transform: rotate(0);">
+                <td><a href="#" class="stretched-link">Jacob</a></td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                </tr>
+                <tr style="transform: rotate(0);">
+                <td colspan="2"><a href="#" class="stretched-link">Larry the Bird</a></td>
+                <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
 </html>
-{{ end }}
