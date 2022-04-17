@@ -6,9 +6,8 @@ RUN apt update && \
     unzip /usr/share/UpdateWrapper-master.zip -d /usr/share/ && \
     mv /usr/share/UpdateWrapper-master /usr/share/UpdateWrapper && \
     rm -f /usr/share/UpdateWrapper-master.zip && \
-    service nginx stop && \
     rm -f /etc/nginx/sites-enabled/default && \
     cp /usr/share/UpdateWrapper/nginx-config /etc/nginx/sites-available/nginx-config && \
     ln -sf /etc/nginx/sites-available/nginx-config /etc/nginx/sites-enabled/nginx-config
 EXPOSE 80
-ENTRYPOINT [ "/bin/bash" ]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
