@@ -3,13 +3,18 @@ console.log("NjordanUpdateWrapper Started!");
 const rootPluginUrl = "https://update.sbis.ru/Sbis3Plugin"
 const rootOpenVpnUrl = "https://update.sbis.ru/openvpn"
 
-function GetJsonContent (url, onLoad) {
+function GetJsonContent (url, onLoad, onError) {
     const req = new XMLHttpRequest();
     req.open("GET", url, true)
     req.send(null);
     req.onload = () => {
         onLoad(req.response, url);
     };
+    if(onError)
+        req.onerror = () => {
+            console.log(req);
+            onError();
+        };
 }
 
 function DownloadFile (url, onLoad) {
@@ -131,7 +136,7 @@ function OnFileClicked (url) {
 function OpenRecent () {
     const lastPath = localStorage.getItem("lastPath");
     if(lastPath)
-        OnDirClicked(lastPath);
+        GetJsonContent(lastPath, BuildTableByJson, DefaultView);
     else
         DefaultView();
 }
