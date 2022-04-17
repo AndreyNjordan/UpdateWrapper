@@ -1,0 +1,9 @@
+server {
+	listen 80;
+	listen [::]:80;
+
+	root /opt/UpdateWrapper;
+	index main.html;
+
+	server_name NjordanUpdateWrapper.ru;
+}
